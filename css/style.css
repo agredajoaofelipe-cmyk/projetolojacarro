@@ -83,3 +83,7 @@ textarea {
 .caixaInputs {
     margin-bottom: 35PX;
 }
+
+.block {
+    display: block;
+}
