@@ -37,5 +37,7 @@ function SalvarCarros(event) {
         cambio
     };
 
-    let carros =JSON.parse()
+    let carros =JSON.parse(localStorage.getItem("carros")) || [];
+    carros.push(carro);
+    localStorage.setItem("carros", JSON.stringify(carros));
 }
