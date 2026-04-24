@@ -20,13 +20,7 @@ function SalvarCarros(event) {
     card.style.padding ="10px";
     card.style.marginBottom = "10px";
 
-    card.innerHTML = '
-    <h3>${titulo}</h3>
-    <p><strong>Preço</strong>R$ ${preco}</p>
-    <p><strong>Preço</strong>R$ ${marca}</p>
-    <p><strong>Preço</strong>R$ ${modelo}</p>
-    <p><strong>Preço</strong>R$ ${cambio}</p>
-    ';
+   
     lista.appendChild(card);
 
     let carro = {
@@ -38,6 +32,6 @@ function SalvarCarros(event) {
     };
 
     let carros =JSON.parse(localStorage.getItem("carros")) || [];
-    carros.push(carro);
+    carros.push(carros);
     localStorage.setItem("carros", JSON.stringify(carros));
 }
