@@ -10,8 +10,6 @@ function SalvarCarros(event) {
 
     let cambio = cambioSelecionado ? cambioSelecionado.id : "Não informado";
 
-    lista.appendChild(card);
-
     let carro = {
         titulo,
         preco,
@@ -21,7 +19,7 @@ function SalvarCarros(event) {
     };
 
     let carros =JSON.parse(localStorage.getItem("carros")) || [];
-    carros.push(carros);
+    carros.push(carro);
     localStorage.setItem("carros", JSON.stringify(carros));
 
     adicionarNaTela(carro);
@@ -34,10 +32,10 @@ function adicionarNaTela(carro) {
     let card = document.createElement('div');
     card.classList.add('card') 
 
-    card.innerHTML ` 
+    card.innerHTML = ` 
     <h3>${carro.titulo}</h3>
     <p><strong>preço:</strong> R$ ${carro.preco}</p>
-    <p><strong>Marco:</strong> R$ ${carro.marca}</p>
+    <p><strong>Marca:</strong> R$ ${carro.marca}</p>
     <p><strong>Modelo:</strong> R$ ${carro.modelo}</p>
     <p><strong>Câmbio:</strong> R$ ${carro.cambio}</p>
     `;
