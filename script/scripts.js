@@ -33,6 +33,7 @@ function adicionarNaTela(carro) {
     card.classList.add('card') 
 
     card.innerHTML = ` 
+    <img src = 'hhtps://picsum.photos/250/150?random = ${Math.random()}'>
     <h3>${carro.titulo}</h3>
     <p><strong>preço:</strong> R$ ${carro.preco}</p>
     <p><strong>Marca:</strong>  ${carro.marca}</p>

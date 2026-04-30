@@ -124,3 +124,22 @@ hr {
    border: none;
 
 }
+
+#ListarCarros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    width: 250px;
+    background: rgb(215, 250, 190);
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(rgb(204, 110, 110));
+}
+
+.card img {
+    width: 100px;
+    border-radius: 8px;
+}
