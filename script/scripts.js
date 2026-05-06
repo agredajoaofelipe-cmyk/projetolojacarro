@@ -3,8 +3,14 @@ function SalvarCarros(event) {
     event.preventDefault();
     let titulo = document.getElementById('title').value;
     let preco = document.getElementById('preco').value;
+    let descricao = document.getElementById('descricao').value;
+    ('descricao').value;
     let marca = document.getElementById('marca').value;
     let modelo = document.getElementById('modelo').value;
+
+    let kilometragem = document.getElementById('kilometragem').value;
+    
+    let data_de_compra = document.getElementById('data_de_compra').value;
 
     let cambioSelecionado = document.querySelector('input[name="marcha"]:checked');
 
@@ -13,8 +19,11 @@ function SalvarCarros(event) {
     let carro = {
         titulo,
         preco,
+        descricao,
         marca,
         modelo,
+        kilometragem,
+        data_de_compra,
         cambio
     };
 
@@ -39,6 +48,9 @@ function adicionarNaTela(carro) {
     <p><strong>Marca:</strong>  ${carro.marca}</p>
     <p><strong>Modelo:</strong> ${carro.modelo}</p>
     <p><strong>Câmbio:</strong>  ${carro.cambio}</p>
+   
+    <button onclick="excluirCarros(${carro.id}, this)
+    ">Excluir</botton>
     `;
 
     lista.appendChild(card);
@@ -55,3 +67,33 @@ window.onload = function () {
         
     
 }
+
+function excluirCarro(id, botao) {
+    let carros = JSON.parse(localStorage.getItem ("carros")) || [];
+
+    carro = carros.filter(carro => Number(carro.id) !== Number(id));
+
+    localStorage.setItem("carros", JSON.stringify(carros));
+
+    let card = botao.parentElement;
+    card.remove();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
